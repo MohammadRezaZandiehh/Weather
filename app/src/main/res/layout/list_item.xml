@@ -1,22 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="100dp"
+    android:layout_margin="10dp">
 
-    <TextView
-        android:gravity="center"
-        android:id="@+id/textViewWeather"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:scrollbarAlwaysDrawHorizontalTrack="false"
-        android:scrollbarAlwaysDrawVerticalTrack="false"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCountryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewLat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountryName" />
+
+        <TextView
+            android:id="@+id/textViewLon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewLat"
+            app:layout_constraintEnd_toStartOf="@+id/textViewLat"
+            app:layout_constraintTop_toTopOf="@+id/textViewLat" />
+
+        <TextView
+            android:id="@+id/textViewCountryId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewLon"
+            app:layout_constraintEnd_toStartOf="@+id/textViewLon"
+            app:layout_constraintTop_toTopOf="@+id/textViewLon" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCountryId"
+            app:layout_constraintEnd_toEndOf="@+id/textViewCountryId"
+            app:layout_constraintStart_toStartOf="@+id/textViewCountryId" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lon"
+            app:layout_constraintBottom_toTopOf="@+id/textViewLon"
+            app:layout_constraintEnd_toEndOf="@+id/textViewLon"
+            app:layout_constraintStart_toStartOf="@+id/textViewLon" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lat"
+            app:layout_constraintBottom_toTopOf="@+id/textViewLat"
+            app:layout_constraintEnd_toEndOf="@+id/textViewLat"
+            app:layout_constraintStart_toStartOf="@+id/textViewLat" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

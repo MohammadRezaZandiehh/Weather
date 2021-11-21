@@ -115,4 +115,7 @@ class GetCountryName :  Serializable {
     var name: String? = null
     @SerializedName("id")
     var id: Int? = null
+
+    @SerializedName("coord")
+    var coord: Coord? = null
 }

@@ -25,7 +25,11 @@ class WeatherAdapter(
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
         val weatherNameCountry: GetCountryName = weatherList[position]
 
-        holder.textView.text = weatherNameCountry.name
+        holder.tvCountryName.text = weatherNameCountry.name
+        holder.textViewLat.text = weatherNameCountry.coord?.lat.toString()
+        holder.textViewLon.text = weatherNameCountry.coord?.lon.toString()
+        holder.textViewCountryId.text = weatherNameCountry.id.toString()
+
     }
 
     override fun getItemCount(): Int {
@@ -33,7 +37,10 @@ class WeatherAdapter(
     }
 
     class WeatherViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(R.id.textViewWeather)
+        val tvCountryName: TextView = itemView.findViewById(R.id.tvCountryName)
+        val textViewLat: TextView = itemView.findViewById(R.id.textViewLat)
+        val textViewLon: TextView = itemView.findViewById(R.id.textViewLon)
+        val textViewCountryId: TextView = itemView.findViewById(R.id.textViewCountryId)
 
     }
 }

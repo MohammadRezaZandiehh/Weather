@@ -13,7 +13,7 @@ interface ApiService {
     @GET("find?lat=55.5&lon=37.5&cnt=10&appid=05e3e40f3e0c3d3220344dcbc089b43c")
     open fun getWeather(): Call<WeatherResponse>
 
-    @GET("find?lat=55.5&lon=37.5&cnt=10&appid=05e3e40f3e0c3d3220344dcbc089b43c")
+    @GET("find?&cnt=10&")
     fun getName(): Call<List<GetCountryName>>
 
 

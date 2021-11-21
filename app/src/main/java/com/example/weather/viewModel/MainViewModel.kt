@@ -21,24 +21,16 @@ class MainViewModel @ViewModelInject constructor(
 
     val weatherLiveData = MutableLiveData<Call<WeatherResponse>>()
     val errorLiveData = MutableLiveData<String>()
-
-
-    private val coroutineException = CoroutineExceptionHandler { coroutineContext, throwable ->
+    val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineException, throwable ->
         errorLiveData.value = throwable.message
     }
-
     init {
         getWeatherFromApiService()
     }
 
     fun getWeatherFromApiService() {
-        viewModelScope.launch(coroutineException) {
-
-            val weather = apiService.getCurrentWeatherData(
-                lat,
-                lon,
-                AppId
-            )
+        viewModelScope.launch(coroutineExceptionHandler) {
+            val weather = apiService.getWeather()
             weatherLiveData.value = weather
         }
     }
