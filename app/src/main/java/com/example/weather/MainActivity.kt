@@ -137,3 +137,7 @@ class MainActivity : AppCompatActivity() {
         var lon = "139"
     }
 }
+
+private fun test (){
+    //mamad
+}
