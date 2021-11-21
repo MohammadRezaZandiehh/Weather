@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weather.KotlinModel.Weather
+import com.example.weather.GetCountryName
 import com.example.weather.R
 
 class WeatherAdapter(
-    private val weatherList: List<Weather>,
+    private val weatherList: List<GetCountryName>,
     private val context: Context
 ) : RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
 
@@ -23,9 +23,9 @@ class WeatherAdapter(
     }
 
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
-        val weather: Weather = weatherList[position]
+        val weatherNameCountry: GetCountryName = weatherList[position]
 
-        holder.textView.text = weather.description
+        holder.textView.text = weatherNameCountry.name
     }
 
     override fun getItemCount(): Int {

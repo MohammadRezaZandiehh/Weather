@@ -1,5 +1,7 @@
-package com.example.weather
+package com.example.weather.module
 
+import com.example.weather.retrofirService.ApiService
+import com.example.weather.utils.Constants.BaseUrl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,10 +22,9 @@ object AppModule {
     @Singleton
     @Provides
     fun provideAnalyticsService (
-    ):ApiService {
+    ): ApiService {
         return Retrofit.Builder()
-//            .baseUrl("http://expertdevelopers.ir/api/v1/")
-            .baseUrl("https://api.openweathermap.org/data/2.5/")
+            .baseUrl(BaseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)

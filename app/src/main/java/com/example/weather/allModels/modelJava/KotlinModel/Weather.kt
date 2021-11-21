@@ -1,4 +1,4 @@
-package com.example.weather.KotlinModel
+package com.example.weather.allModels.modelJava.KotlinModel
 
 
 import com.google.gson.annotations.SerializedName
