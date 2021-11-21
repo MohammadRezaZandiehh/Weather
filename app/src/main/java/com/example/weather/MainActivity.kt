@@ -139,5 +139,5 @@ class MainActivity : AppCompatActivity() {
 }
 
 private fun test (){
-    //mamad
+    //mamadererer
 }
