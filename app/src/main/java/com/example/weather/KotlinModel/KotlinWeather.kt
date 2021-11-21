@@ -1,9 +1,9 @@
-package com.example.weather.model
+package com.example.weather.KotlinModel
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Weather(
+data class KotlinWeather(
     @SerializedName("base")
     val base: String,
     @SerializedName("clouds")
@@ -22,10 +22,12 @@ data class Weather(
     val name: String,
     @SerializedName("sys")
     val sys: Sys,
+    @SerializedName("timezone")
+    val timezone: Int,
     @SerializedName("visibility")
     val visibility: Int,
     @SerializedName("weather")
-    val weather: List<WeatherX>,
+    val weather: List<Weather>,
     @SerializedName("wind")
     val wind: Wind
 )

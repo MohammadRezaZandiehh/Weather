@@ -1,9 +1,9 @@
-package com.example.weather.model
+package com.example.weather.KotlinModel
 
 
 import com.google.gson.annotations.SerializedName
 
-data class WeatherX(
+data class Weather(
     @SerializedName("description")
     val description: String,
     @SerializedName("icon")

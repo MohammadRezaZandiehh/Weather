@@ -2,7 +2,7 @@ package com.example.weather
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.example.weather.model.Weather
+import com.example.weather.KotlinModel.Main
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
@@ -10,7 +10,8 @@ class MainViewModel @ViewModelInject constructor(
     private val apiService: ApiService
 ) : ViewModel() {
 
-    val studentLiveData = MutableLiveData<List<Weather>>()
+//    val weatherLiveData = MutableLiveData<List>()
+    val mainLiveData = MutableLiveData<Main>()
     val errorLiveData = MutableLiveData<String>()
 
 
@@ -20,9 +21,11 @@ class MainViewModel @ViewModelInject constructor(
 
 
     init {
-        viewModelScope.launch (coroutineException){
-            val weathers = apiService.getStudent()
-            studentLiveData.value = weathers
+        viewModelScope.launch(coroutineException) {
+//            val weather = apiService.getWeather()
+//            weatherLiveData.value = weather
+//            val temp = apiService.getTemp()
+//            mainLiveData.value = temp
         }
     }
 
