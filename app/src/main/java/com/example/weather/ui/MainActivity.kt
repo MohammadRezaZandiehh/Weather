@@ -50,8 +50,15 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     Log.d("dasdsa", "mamad")
 
-                    val responseName = response.body()!!.name
-                    binding.textView.text = responseName
+                    val responseName = response.body()!!.getCountryName
+
+                    val weatherAdapter: WeatherAdapter? =
+                        responseName?.let { it1 -> WeatherAdapter(it1, this@MainActivity) }
+
+                    binding.rvWeather.adapter = weatherAdapter
+                    binding.rvWeather.layoutManager = LinearLayoutManager(this@MainActivity)
+
+//                    binding.textView.text = responseName
                 }
 
                 override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
